@@ -5,11 +5,11 @@
 
 2. [Mapa de impacto](https://github.com/alejoDev117/Documentacion_Control_Inhibitorio/blob/main/DescubrimientoProblema/1.2.%20Mapa%20de%20Impacto.md)
 ## 2. Diseño estrategico
-1. Modelado de dominio ([Modelo anemico](https://github.com/alejoDev117/Documentacion_Control_Inhibitorio/blob/main/Dise%C3%B1oEstrategico/2.1.1.%20ModeloDominioAnemico.md) y [enriquecido](https://uconet.sharepoint.com/:x:/s/Cognicare-Core/EVnVxWpOY-BMqu7yUH9PsmIBWMf6aPuNzZR3PrfmESUp5g?e=6NB8b1))
-2. [Requerimientos](https://github.com/federico1605/Documentacion_Cognicare/blob/main/Dise%C3%B1oEstrategico/2.2.%20Requerimientos.md)
-3. [Mapa de historias de usuario](https://uconet.sharepoint.com/:x:/s/Cognicare-Core/EcFoaJY1301Ijm9oTyGmJx4B2MMwidAx8O-ONuGPoQVJjw?e=brJVR0)
-4. [Historias de Usuario](https://uconet.sharepoint.com/:x:/s/Cognicare-Core/EcFoaJY1301Ijm9oTyGmJx4B2MMwidAx8O-ONuGPoQVJjw?e=brJVR0)
-5. [Criterios de aceptación](https://uconet.sharepoint.com/:x:/s/Cognicare-Core/EcFoaJY1301Ijm9oTyGmJx4B2MMwidAx8O-ONuGPoQVJjw?e=brJVR0)
+1. Modelado de dominio ([Modelo anemico](https://github.com/alejoDev117/Documentacion_Control_Inhibitorio/blob/main/Dise%C3%B1oEstrategico/2.1.1.%20ModeloDominioAnemico.md) y [enriquecido](https://uconet.sharepoint.com/:x:/r/sites/Cognicare-ControlInhibitorio/Shared%20Documents/Control%20Inhibitorio/Documentaci%C3%B3n/1.%20Artefactos%20t%C3%A9cnicos/1.%20Artefactos%20estrat%C3%A9gicos/3.%20Modelo%20de%20dominio/2.%20Modelo%20de%20dominio%20enriquecido/Modelo%20enriquecido%20Cogniverse.xlsx?d=w22cb4c73fcc140b5a686bdb77500fc76&csf=1&web=1&e=LpJIwb))
+2. [Requerimientos](https://github.com/alejoDev117/Documentacion_Control_Inhibitorio/blob/main/Dise%C3%B1oEstrategico/2.2.%20Requerimientos.md)
+3. [Mapa de historias de usuario](https://uconet.sharepoint.com/:x:/r/sites/Cognicare-ControlInhibitorio/Shared%20Documents/Control%20Inhibitorio/Documentaci%C3%B3n/1.%20Artefactos%20t%C3%A9cnicos/1.%20Artefactos%20estrat%C3%A9gicos/4.%20Mapa%20de%20historias%20de%20usuario/MapeoImpactosComandos.xlsx?d=wcf3a0136fb6c4d7abc001a9e2dd5cdae&csf=1&web=1&e=hHbI8N)
+4. [Historias de Usuario](https://uconet.sharepoint.com/:x:/r/sites/Cognicare-ControlInhibitorio/Shared%20Documents/Control%20Inhibitorio/Documentaci%C3%B3n/1.%20Artefactos%20t%C3%A9cnicos/1.%20Artefactos%20estrat%C3%A9gicos/4.%20Mapa%20de%20historias%20de%20usuario/MapeoImpactosComandos.xlsx?d=wcf3a0136fb6c4d7abc001a9e2dd5cdae&csf=1&web=1&e=hHbI8N)
+5. [Criterios de aceptación](https://uconet.sharepoint.com/:x:/r/sites/Cognicare-ControlInhibitorio/Shared%20Documents/Control%20Inhibitorio/Documentaci%C3%B3n/1.%20Artefactos%20t%C3%A9cnicos/1.%20Artefactos%20estrat%C3%A9gicos/4.%20Mapa%20de%20historias%20de%20usuario/MapeoImpactosComandos.xlsx?d=wcf3a0136fb6c4d7abc001a9e2dd5cdae&csf=1&web=1&e=hHbI8N)
 ## 3. Diseño tactico alto nivel
 1. [Arquitectura de referencia](https://github.com/federico1605/Documentacion_Cognicare/blob/main/Dise%C3%B1oTacticoAltoNivel/ArquitecturaReferencia.md)
 2. [Drivers Arquitectonicos](https://github.com/federico1605/Documentacion_Cognicare/blob/main/Dise%C3%B1oTacticoAltoNivel/ArquitecturaReferencia.md)

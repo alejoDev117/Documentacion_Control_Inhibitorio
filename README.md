@@ -12,9 +12,9 @@
 5. [Criterios de aceptación](https://uconet.sharepoint.com/:x:/r/sites/Cognicare-ControlInhibitorio/Shared%20Documents/Control%20Inhibitorio/Documentaci%C3%B3n/1.%20Artefactos%20t%C3%A9cnicos/1.%20Artefactos%20estrat%C3%A9gicos/4.%20Mapa%20de%20historias%20de%20usuario/MapeoImpactosComandos.xlsx?d=wcf3a0136fb6c4d7abc001a9e2dd5cdae&csf=1&web=1&e=wnWs72)
 ## 3. Diseño tactico alto nivel
 1. [Arquitectura de referencia](https://github.com/alejoDev117/Documentacion_Control_Inhibitorio/blob/main/Dise%C3%B1oTacticoAltoNivel/ArquitecturaReferencia.md)
-2. [Drivers Arquitectonicos](https://github.com/federico1605/Documentacion_Cognicare/blob/main/Dise%C3%B1oTacticoAltoNivel/ArquitecturaReferencia.md)
-3. [Justificiación de alternativa de solución](https://github.com/federico1605/Documentacion_Cognicare/blob/main/Dise%C3%B1oTacticoAltoNivel/ArquitecturaReferencia.md)
-4. [Plataforma tecnologica](https://github.com/federico1605/Documentacion_Cognicare/blob/main/Dise%C3%B1oTacticoAltoNivel/ArquitecturaReferencia.md)
+2. [Drivers Arquitectonicos](https://github.com/alejoDev117/Documentacion_Control_Inhibitorio/blob/main/Dise%C3%B1oTacticoAltoNivel/ArquitecturaReferencia.md)
+3. [Justificiación de alternativa de solución](https://github.com/alejoDev117/Documentacion_Control_Inhibitorio/blob/main/Dise%C3%B1oTacticoAltoNivel/ArquitecturaReferencia.md)
+4. [Plataforma tecnologica](https://github.com/alejoDev117/Documentacion_Control_Inhibitorio/blob/main/Dise%C3%B1oTacticoAltoNivel/ArquitecturaReferencia.md)
 ## 4. Diseño tactico detallado
 1. [Diagrama de datos](https://github.com/federico1605/Documentacion_Cognicare/blob/main/Dise%C3%B1oTacticoDetallado/4.1.%20Modelo%20de%20Datos.md)
 2. [Diagrama de clases](https://github.com/federico1605/Documentacion_Cognicare/blob/main/Dise%C3%B1oTacticoDetallado/4.2.%20Diagrama%20de%20Clases.md)

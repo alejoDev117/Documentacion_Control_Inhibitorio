@@ -71,7 +71,7 @@ Este servicio devuelve los datos de una sesión al backend, que lso utiliza para
 
 # Arquetipo de Referencia
 
-![Arquetipo de Referencia](/Imagenes/Arquetipo_Referencia.png)
+![Arquetipo de Referencia](/Imagenes/Arquetipo_Referencia.jpg)
 
 La arquitectura propuesta representa la variable Control Inhibitorio de una aplicación de entrenamiento cognitivo enfocada en entrenar a los estudiantes. Este componente actúa como la variable encargada de entrenar el control inhibitorio y de generar las métricas esperadas para el componente centralizador.
 

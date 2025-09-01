@@ -1,5 +1,5 @@
 # Arquitectura de Referencia
-![Arquitectura de Referencia](/Imagenes/Arquitectura_Referencia.png)
+![Arquitectura de Referencia](/Imagenes/Arquitectura_Referencia.jpg)
 
 ## 1. Interacción del Usuario (User → Web/Http)
 

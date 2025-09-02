@@ -20,7 +20,7 @@
 2. [Diagrama de clases](https://github.com/federico1605/Documentacion_Cognicare/blob/main/Dise%C3%B1oTacticoDetallado/4.2.%20Diagrama%20de%20Clases.md)
 3. [Diagrama de paquetes](https://github.com/federico1605/Documentacion_Cognicare/blob/main/Dise%C3%B1oTacticoDetallado/4.3.%20Diagrama%20de%20Paquetes.md)
 4. [Diagrama de componentes](https://github.com/federico1605/Documentacion_Cognicare/blob/main/Dise%C3%B1oTacticoDetallado/4.4.%20Diagrama%20de%20Componentes.md)
-5. [Contratos de API](https://github.com/federico1605/Documentacion_Cognicare/blob/main/Dise%C3%B1oTacticoDetallado/4.5.%20Contratos%20de%20API.md)
+5. [Contratos de API](https://github.com/Rubensuaza/api_docs_ci/blob/main/README.md)
 ## 5. Construccion
 1. [Analisis estatico de codigo](https://sonarcloud.io/component_measures?id=juanrv_CentralizadorBackend)
 2. [Pruebas unitarias](https://github.com/federico1605/Documentacion_Cognicare/blob/main/Construccion/5.2.%20Pruebas%20Unitarias.md)

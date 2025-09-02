@@ -88,25 +88,24 @@ Es el estándar para la interacción cliente-servidor en la web.
 
 ## React
 En esta parte del flujo, se asume que existe una aplicación frontend desarrollada en React.  
-Esta aplicación es la que los usuarios finales utilizan para interactuar (registro, login, visualización de progreso, etc.).
+Esta aplicación es la que los usuarios finales utilizan para interactuar (Jugar, Menu, visualización de progreso, etc.).
 
 React se encarga de:
 
 - La interfaz de usuario dinámica y reactiva.
 - Enviar solicitudes al backend de Node.js.
 
-## Node.js - Componente-Centralizador-api
-Este es el corazón de tu módulo centralizador y el backend principal.  
+## Node.js - Control-Inhibitorio-back-api
+Este es el corazón de la variable control inhibitorio y el backend principal.  
 Node.js es un entorno de ejecución de JavaScript del lado del servidor que permite construir aplicaciones escalables y de alto rendimiento.  
 En esta arquitectura, actúa como el servidor de APIs principal.
 
 ### Funcionalidades Centrales
 Este componente es responsable de:
 
-- **Autenticación y Autorización de Usuarios**: Gestiona el registro, inicio de sesión y la validación de permisos de los usuarios.
-- **Gestión de Usuarios**: Administra la creación, modificación y consulta de perfiles de usuario.
-- **Gestión del Progreso de Variables de Entrenamiento**: Almacena y actualiza el estado de los usuarios en cada variable de entrenamiento (puntuaciones, avances, etc.).
-- **Orquestación de Solicitudes**: Actúa como un proxy o puerta de enlace entre el frontend de React y el microservicio `Variables-Cognitivas-api` (para obtener datos o lógicas específicas de variables) y la base de datos PostgreSQL.
+- **Gestión del guardado de datos**: Almacena los resultados de cada encuesta y cada cuadro de desempeño, creando una conexión directa con la base de datos.
+- **Gestión del Progreso de Variable de Entrenamiento**: Almacena y actualiza el estado de los usuarios en cada sesión de entrenamiento (puntuaciones, avances, etc.).
+- **Orquestación de Solicitudes**: Actua de manera conjunta con el `Componente-centralizador-api`, creando una conexión directa entre ambos, para la correcta transmisión de datos.
 
 ## PostgreSQL
 Es la base de datos relacional utilizada para almacenar la información persistente del sistema.
@@ -114,24 +113,24 @@ Es la base de datos relacional utilizada para almacenar la información persiste
 ### Datos que Almacena
 Principalmente, guardará:
 
-- Información de los usuarios (nombres, credenciales, roles).
-- Datos transaccionales y de estado relacionados con el progreso de cada usuario en las diferentes variables de entrenamiento.
+- Información de cada una de las tareas(duración, nombre, etc).
+- Información de cada uno de los niveles(duración,cantidad de estímulos,porcentaje para ganar,etc).
+- Información del resultado de cada uno de los estudiantes durante el desarrollo de la sesión de entranmiento en    cada uno de los nieveles.
 
 Su naturaleza relacional es ideal para modelar estas relaciones complejas y asegurar la integridad de los datos.
 
-## Variables-Cognitivas-api
-Este es un servicio externo o microservicio al que el `Componente-Centralizador-api` (Node.js) se conecta.
+## Componente-Centralizador-api
+Este es un servicio externo o microservicio al que el `Control-Inhibitorio-api` (Node.js) se conecta.
 
 ### Función
-Presumiblemente, este microservicio es el encargado de la lógica específica de las variables de entrenamiento cognitivas.  
-Podría encargarse de:
+Este es el servicio encargado de orquestar la lógica central de la aplicación, Asi como también:
 
-- Generar las variables.
-- Validar las respuestas.
-- Calcular puntuaciones complejas.
-- Interactuar con modelos de IA/ML relacionados con el entrenamiento cognitivo.
+- Autenticación/Autorización de los usuarios.
+- Gestión de los usuarios(Registro).
+- Recolección y administración de los resultados de los cuadros de desempeño.
+- Brindar la sesión de entranmiento, y en su defecto el progreso de la variable de un estudiante.
 
-La flecha punteada desde `Variables-Cognitivas-api` de vuelta a Node.js indica que este API puede devolver resultados o datos al `Componente-Centralizador-api` para que este último los:
+La flecha punteada desde `Control-Inhibitorio-api` de vuelta a `Componente-Centralizador-api` indica que se envian datos a desde el backend:
 
 - Procese.
 - Guarde en PostgreSQL.
@@ -140,11 +139,11 @@ La flecha punteada desde `Variables-Cognitivas-api` de vuelta a Node.js indica q
 # Justificación de las Herramientas Elegidas
 
 Las herramientas seleccionadas son las mejores posibles en el contexto de tus necesidades específicas, ofreciendo un equilibrio entre desarrollo ágil, rendimiento, escalabilidad y gestión de datos confiable.  
-Cada elección se ha realizado tras considerar alternativas y evaluar su idoneidad para los requerimientos del **módulo centralizador**.
+Cada elección se ha realizado tras considerar alternativas y evaluar su idoneidad para los requerimientos de la **Variable Control Inhibitorio**.
 
 ---
 
-## Node.js (para Componente-Centralizador-api)
+## Node.js (para Control-Inhibitorio-api)
 
 - **Rendimiento y Escalabilidad (No Bloqueante)**:  
   Node.js se basa en un modelo de E/S no bloqueante y un bucle de eventos, lo que lo hace extremadamente eficiente para manejar múltiples conexiones concurrentes con poca sobrecarga. Ideal para APIs backend en aplicaciones de juegos.
@@ -155,8 +154,6 @@ Cada elección se ha realizado tras considerar alternativas y evaluar su idoneid
 - **Desarrollo Rápido y Prototipado**:  
   Gracias al ecosistema de `npm` y frameworks como `Express.js`, el desarrollo de APIs es ágil. Node.js acelera el lanzamiento al mercado.
 
-- **Ideal como "Punto de Entrada Centralizador"**:  
-  Excelente para gestionar rutas, autenticación y orquestar interacciones entre frontend, microservicios y base de datos.
 
 - **Comunidad y Ecosistema Maduro**:  
   Gran comunidad, soporte constante y librerías robustas que aseguran sostenibilidad a largo plazo.
@@ -222,10 +219,10 @@ Sin embargo, PostgreSQL fue preferido por:
 
 ---
 
-## Microservicio/Servicio Externo (Variables-Cognitivas-api)
+## Microservicio/Servicio Externo (Componente-Centralizador-api)
 
 - **Separación de Responsabilidades (Microservicios)**:  
-  La lógica cognitiva se mantiene independiente del módulo centralizador, facilitando modularidad, mantenimiento y claridad en los dominios.
+  La lógica cognitiva se mantiene independiente de la variable control inhibitorio, facilitando modularidad, mantenimiento y claridad en los dominios.
 
 - **Escalabilidad Independiente**:  
   Este servicio puede escalar según su demanda sin afectar al resto del sistema. Si se requiere cómputo intensivo, solo él necesita más recursos.
@@ -302,4 +299,4 @@ Se ha seleccionado **PostgreSQL** como la base de datos relacional principal par
 - Asegura la **fiabilidad y consistencia a largo plazo**, clave para el uso continuo de la aplicación.
 
 
-[Volver](https://github.com/federico1605/Documentacion_Cognicare/tree/main)
+[Volver](https://github.com/alejoDev117/Documentacion_Control_Inhibitorio/tree/main)

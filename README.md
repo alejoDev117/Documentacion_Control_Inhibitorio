@@ -12,7 +12,7 @@
 5. [Criterios de aceptación](https://uconet.sharepoint.com/:x:/r/sites/Cognicare-ControlInhibitorio/Shared%20Documents/Control%20Inhibitorio/Documentaci%C3%B3n/1.%20Artefactos%20t%C3%A9cnicos/1.%20Artefactos%20estrat%C3%A9gicos/4.%20Mapa%20de%20historias%20de%20usuario/MapeoImpactosComandos.xlsx?d=wcf3a0136fb6c4d7abc001a9e2dd5cdae&csf=1&web=1&e=wnWs72)
 ## 3. Diseño tactico alto nivel
 1. [Arquitectura de referencia](https://github.com/alejoDev117/Documentacion_Control_Inhibitorio/blob/main/Dise%C3%B1oTacticoAltoNivel/ArquitecturaReferencia.md)
-2. [Drivers Arquitectonicos](https://github.com/alejoDev117/Documentacion_Control_Inhibitorio/blob/main/Dise%C3%B1oTacticoAltoNivel/disenoTacticoAltoNivel.md)
+2. [Drivers Arquitectonicos](https://github.com/alejoDev117/Documentacion_Control_Inhibitorio/blob/feature/api-docs/Dise%C3%B1oTacticoAltoNivel/driversArquitectonicos.md)
 3. [Justificiación de alternativa de solución](https://github.com/alejoDev117/Documentacion_Control_Inhibitorio/blob/main/Dise%C3%B1oTacticoAltoNivel/ArquitecturaReferencia.md)
 4. [Plataforma tecnologica](https://github.com/alejoDev117/Documentacion_Control_Inhibitorio/blob/main/Dise%C3%B1oTacticoAltoNivel/ArquitecturaReferencia.md)
 ## 4. Diseño tactico detallado
@@ -27,5 +27,5 @@
 ## 6. Entregas y despliegue
 1. [Estrategia de entrega](https://uconet.sharepoint.com/:x:/r/sites/Cognicare-Core/Shared%20Documents/Core/Documentaci%C3%B3n/1.%20Artefactos%20t%C3%A9cnicos/1.%20Artefactos%20estrat%C3%A9gicos/6.%20Plan%20de%20liberaciones/Releases.xlsx?d=w7f7c9bebe91d429097da5f6d6b9cda10&csf=1&web=1&e=6GmhhU)
 2. [Checklist de Release](https://github.com/federico1605/Documentacion_Cognicare/blob/main/EntregasDespliegue/6.2.%20Checklist%20de%20Release.md)
-3. [Manual de usuario](https://github.com/federico1605/Documentacion_Cognicare/blob/main/EntregasDespliegue/6.3.%20Manual%20de%20Usuario.md)
+3. [Manual de usuario](https://github.com/federico1605/Documentacion_Cognicare/blob/main/EntregasDespliegue/6.3.%20Manual%20de%20Usuario.md)git X|
 4. [Manual de instalación](https://github.com/federico1605/Documentacion_Cognicare/blob/main/ManualInstalacion/ManualInstalacion.md)

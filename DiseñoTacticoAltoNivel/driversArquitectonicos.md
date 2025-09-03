@@ -276,3 +276,6 @@ La arquitectura está diseñada para soportar múltiples usuarios y sesiones de 
 ### 3.4 Integración con Componente Centralizador
 
 La arquitectura contempla la comunicación con un componente centralizador externo para autenticación y seguimiento. Esta integración se realiza a través de servicios específicos en el backend, manteniendo la separación de responsabilidades y facilitando posibles cambios en la integración en el futuro.
+
+
+[Volver](https://github.com/alejoDev117/Documentacion_Control_Inhibitorio/tree/main)

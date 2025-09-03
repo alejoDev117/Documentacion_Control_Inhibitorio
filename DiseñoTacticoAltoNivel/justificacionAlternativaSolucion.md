@@ -164,3 +164,5 @@ La elección de la arquitectura Cliente-Servidor con API REST influye en el dise
    - Feedback apropiado al usuario
 
 La arquitectura seleccionada proporciona un equilibrio óptimo entre la experiencia de usuario requerida y los requisitos técnicos del sistema, permitiendo un desarrollo modular, mantenible y alineado con los drivers arquitectónicos identificados.
+
+[Volver](https://github.com/alejoDev117/Documentacion_Control_Inhibitorio/tree/main)

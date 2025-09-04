@@ -1,7 +1,6 @@
 # Modelo Entidad-Relación - Control Inhibitorio
 
-Este documento presenta el Modelo Entidad-Relación (MER) del sistema de Control Inhibitorio, basado en el esquema de base de datos definido en el archivo `ci.sql`.
-
+Este documento presenta el Modelo Entidad-Relación (MER) del sistema de Control Inhibitorio.
 ## Diagrama Entidad-Relación
 
 ```mermaid

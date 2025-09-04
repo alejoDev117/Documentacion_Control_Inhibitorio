@@ -137,3 +137,5 @@ El esquema incluye dos funciones principales:
 1. **obtenerresultadosestudianteft**: Obtiene los resultados de desempeño de un estudiante en formato JSON, incluyendo métricas por tarea, tipo de tarea, nivel, y otros indicadores de rendimiento.
 
 2. **obtenerprogresoestudianteft**: Obtiene el progreso general de un estudiante, indicando qué niveles ha completado, si ha finalizado todo el entrenamiento, y el estado de aprobación de cada nivel.
+
+[Volver](https://github.com/alejoDev117/Documentacion_Control_Inhibitorio/tree/main)

@@ -68,3 +68,5 @@ flowchart TB
 - Los **repositories** trabajan con los **models** para manipular las entidades.
 - Los **services** pueden utilizar **clients** para comunicarse con servicios externos.
 - Las **routes** dirigen las peticiones a los **controllers** correspondientes.
+
+[Volver](https://github.com/alejoDev117/Documentacion_Control_Inhibitorio/tree/main)

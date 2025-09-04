@@ -220,3 +220,5 @@ Esta arquitectura sigue el patrón MVC (Modelo-Vista-Controlador) adaptado para 
 - Los Servicios y Repositorios implementan la lógica de negocio y acceso a datos
 
 Además, se utiliza el patrón Singleton para las instancias de servicios, repositorios y controladores, asegurando que solo exista una instancia de cada clase en la aplicación.
+
+[Volver](https://github.com/alejoDev117/Documentacion_Control_Inhibitorio/tree/main)

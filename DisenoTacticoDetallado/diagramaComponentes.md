@@ -1,101 +1,122 @@
-# C4 Component Diagram for Inhibitory Control Backend
+# Diagrama de Componentes C4 para el Backend de Control Inhibitorio
 
-This document provides a detailed C4 component diagram for the Inhibitory Control Backend application, illustrating the internal architecture and relationships between components.
+Este documento proporciona un diagrama detallado de componentes C4 para la aplicación Backend de Control Inhibitorio, ilustrando la arquitectura interna y las relaciones entre componentes.
 
-## Component Diagram
+## Diagrama de Componentes
 
 ```mermaid
-C4Component
-    title Component Diagram for Inhibitory Control Backend
+graph TB
+    %% Componentes
+    frontendApp["Aplicación Frontend<br><small>JavaScript, React</small>"]
 
-    Container(frontendApp, "Frontend Application", "JavaScript, React", "Provides the user interface for students to interact with the Inhibitory Control training")
+    subgraph apiApplication["Aplicación API"]
+        routesComponent["Rutas<br><small>Express Router</small>"]
+        controllersComponent["Controladores<br><small>JavaScript</small>"]
+        servicesComponent["Servicios<br><small>JavaScript</small>"]
+        repositoriesComponent["Repositorios<br><small>JavaScript</small>"]
+        modelsComponent["Modelos<br><small>Sequelize</small>"]
+        apiClientComponent["Cliente API<br><small>Axios</small>"]
+        configComponent["Configuración<br><small>JavaScript</small>"]
+        loggingComponent["Registro<br><small>Winston</small>"]
+    end
 
-    Container_Boundary(apiApplication, "API Application") {
-        Component(routesComponent, "Routes", "Express Router", "Defines API endpoints for training sessions, performance metrics, and levels")
-        Component(controllersComponent, "Controllers", "JavaScript", "Handles HTTP requests and responses, implements input validation and response formatting")
-        Component(servicesComponent, "Services", "JavaScript", "Implements business logic for training sessions, performance metrics, and levels")
-        Component(repositoriesComponent, "Repositories", "JavaScript", "Provides data access layer for training sessions, performance metrics, and levels")
-        Component(modelsComponent, "Models", "Sequelize", "Defines data structures for training sessions and performance metrics")
-        Component(apiClientComponent, "API Client", "Axios", "Provides a reusable client for making external API calls")
-        Component(configComponent, "Configuration", "JavaScript", "Manages application configuration including database, API, and logging settings")
-        Component(loggingComponent, "Logging", "Winston", "Handles application logging across all components")
-    }
+    database[("Base de Datos<br><small>PostgreSQL</small>")]
+    externalApis["APIs Externas"]
 
-    ContainerDb(database, "Database", "PostgreSQL", "Stores training sessions, performance metrics, and level data")
-    System_Ext(externalApis, "External APIs", "Third-party services consumed by the application")
+    %% Relaciones
+    frontendApp -->|"Realiza llamadas API a<br>JSON/HTTPS"| routesComponent
+    routesComponent -->|"Dirige peticiones a"| controllersComponent
+    controllersComponent -->|"Utiliza"| servicesComponent
+    servicesComponent -->|"Utiliza"| repositoriesComponent
+    repositoriesComponent -->|"Utiliza"| modelsComponent
+    modelsComponent -->|"Lee y escribe en<br>SQL/Sequelize ORM"| database
+    servicesComponent -->|"Utiliza"| apiClientComponent
+    apiClientComponent -->|"Consume<br>HTTPS"| externalApis
+    configComponent -->|"Configura"| modelsComponent
+    loggingComponent -.->|"Proporciona registro para"| apiApplication
 
-    Rel(frontendApp, routesComponent, "Makes API calls to", "JSON/HTTPS")
-    Rel(routesComponent, controllersComponent, "Routes requests to", "Function calls")
-    Rel(controllersComponent, servicesComponent, "Uses", "Function calls")
-    Rel(servicesComponent, repositoriesComponent, "Uses", "Function calls")
-    Rel(repositoriesComponent, modelsComponent, "Uses", "Function calls")
-    Rel(modelsComponent, database, "Reads from and writes to", "SQL/Sequelize ORM")
-    Rel(servicesComponent, apiClientComponent, "Uses", "Function calls")
-    Rel(apiClientComponent, externalApis, "Consumes", "HTTPS")
-    Rel(configComponent, modelsComponent, "Configures", "Function calls")
-    Rel_Back(loggingComponent, apiApplication, "Provides logging for", "Function calls")
+    %% Estilos
+    classDef frontend fill:#4285F4,stroke:#333,stroke-width:2px,color:white,font-weight:bold
+    classDef backend fill:#34A853,stroke:#333,stroke-width:2px,color:white,font-weight:bold
+    classDef database fill:#FBBC05,stroke:#333,stroke-width:2px,color:black,font-weight:bold
+    classDef external fill:#EA4335,stroke:#333,stroke-width:2px,color:white,font-weight:bold
 
-    UpdateRelStyle(frontendApp, routesComponent, $textColor="green", $lineColor="green")
-    UpdateRelStyle(modelsComponent, database, $textColor="red", $lineColor="red")
-    UpdateRelStyle(apiClientComponent, externalApis, $textColor="purple", $lineColor="purple")
+    class frontendApp frontend
+    class routesComponent,controllersComponent,servicesComponent,repositoriesComponent,modelsComponent,apiClientComponent,configComponent,loggingComponent backend
+    class database database
+    class externalApis external
+
+    %% Estilo de relaciones
+    linkStyle 0 stroke:#4285F4,stroke-width:3px;
+    linkStyle 1 stroke:#34A853,stroke-width:3px;
+    linkStyle 2 stroke:#34A853,stroke-width:3px;
+    linkStyle 3 stroke:#34A853,stroke-width:3px;
+    linkStyle 4 stroke:#FBBC05,stroke-width:3px;
+    linkStyle 5 stroke:#FBBC05,stroke-width:3px;
+    linkStyle 6 stroke:#EA4335,stroke-width:3px;
+    linkStyle 7 stroke:#EA4335,stroke-width:3px;
+    linkStyle 8 stroke:#34A853,stroke-width:3px;
+    linkStyle 9 stroke:#34A853,stroke-width:2px,stroke-dasharray:5;
 ```
 
-## Component Descriptions
+## Descripción de Componentes
 
-### Routes Component
-The Routes component defines the API endpoints for the application. It uses Express Router to map HTTP requests to specific controller methods. The main route files include:
-- **levelRoutes.js**: Defines endpoints for managing game levels
-- **performanceTableRoutes.js**: Defines endpoints for tracking and retrieving performance metrics
-- **trainingSessionRoutes.js**: Defines endpoints for managing training sessions
+### Componente de Rutas
+El componente de Rutas define los endpoints API para la aplicación. Utiliza Express Router para mapear peticiones HTTP a métodos específicos del controlador. Los principales archivos de rutas incluyen:
+- **levelRoutes.js**: Define endpoints para gestionar niveles de juego
+- **performanceTableRoutes.js**: Define endpoints para seguimiento y recuperación de métricas de rendimiento
+- **trainingSessionRoutes.js**: Define endpoints para gestionar sesiones de entrenamiento
 
-### Controllers Component
-The Controllers component handles HTTP requests and responses. It validates input data, calls appropriate service methods, and formats responses. The main controller files include:
-- **levelController.js**: Handles requests related to game levels
-- **performanceTableController.js**: Handles requests related to performance metrics
-- **trainingSessionController.js**: Handles requests related to training sessions
+### Componente de Controladores
+El componente de Controladores maneja las peticiones y respuestas HTTP. Valida datos de entrada, llama a los métodos de servicio apropiados y formatea las respuestas. Los principales archivos de controladores incluyen:
+- **levelController.js**: Maneja peticiones relacionadas con niveles de juego
+- **performanceTableController.js**: Maneja peticiones relacionadas con métricas de rendimiento
+- **trainingSessionController.js**: Maneja peticiones relacionadas con sesiones de entrenamiento
 
-### Services Component
-The Services component implements the business logic of the application. It processes data, applies business rules, and coordinates between controllers and repositories. The main service files include:
-- **levelService.js**: Implements business logic for game levels
-- **performanceTableService.js**: Implements business logic for performance metrics
-- **trainingSessionService.js**: Implements business logic for training sessions
+### Componente de Servicios
+El componente de Servicios implementa la lógica de negocio de la aplicación. Procesa datos, aplica reglas de negocio y coordina entre controladores y repositorios. Los principales archivos de servicios incluyen:
+- **levelService.js**: Implementa lógica de negocio para niveles de juego
+- **performanceTableService.js**: Implementa lógica de negocio para métricas de rendimiento
+- **trainingSessionService.js**: Implementa lógica de negocio para sesiones de entrenamiento
 
-### Repositories Component
-The Repositories component provides a data access layer that abstracts database operations. It uses Sequelize models to interact with the database. The main repository files include:
-- **levelRepository.js**: Provides data access for game levels
-- **performanceTableRepository.js**: Provides data access for performance metrics
-- **trainingSessionRepository.js**: Provides data access for training sessions
+### Componente de Repositorios
+El componente de Repositorios proporciona una capa de acceso a datos que abstrae las operaciones de base de datos. Utiliza modelos Sequelize para interactuar con la base de datos. Los principales archivos de repositorios incluyen:
+- **levelRepository.js**: Proporciona acceso a datos para niveles de juego
+- **performanceTableRepository.js**: Proporciona acceso a datos para métricas de rendimiento
+- **trainingSessionRepository.js**: Proporciona acceso a datos para sesiones de entrenamiento
 
-### Models Component
-The Models component defines the data structures and relationships using Sequelize ORM. The main model files include:
-- **performanceTable.js**: Defines the structure for performance metrics
-- **trainingSession.js**: Defines the structure for training sessions
+### Componente de Modelos
+El componente de Modelos define las estructuras de datos y relaciones utilizando Sequelize ORM. Los principales archivos de modelos incluyen:
+- **performanceTable.js**: Define la estructura para métricas de rendimiento
+- **trainingSession.js**: Define la estructura para sesiones de entrenamiento
 
-### API Client Component
-The API Client component provides a reusable client for making external API calls. It uses Axios for HTTP requests and includes error handling and request configuration.
-- **ApiClient.js**: Implements a generic API client for external services
+### Componente Cliente API
+El componente Cliente API proporciona un cliente reutilizable para realizar llamadas a APIs externas. Utiliza Axios para peticiones HTTP e incluye manejo de errores y configuración de peticiones.
+- **ApiClient.js**: Implementa un cliente API genérico para servicios externos
 
-### Configuration Component
-The Configuration component manages application settings. It includes configuration for various aspects of the application:
-- **apiConfig.js**: Configuration for API endpoints
-- **database.js**: Database connection configuration
-- **sequelize.js**: Sequelize ORM configuration
-- **logger.js**: Logging configuration
+### Componente de Configuración
+El componente de Configuración gestiona la configuración de la aplicación. Incluye configuración para varios aspectos de la aplicación:
+- **apiConfig.js**: Configuración para endpoints API
+- **database.js**: Configuración de conexión a base de datos
+- **sequelize.js**: Configuración de Sequelize ORM
+- **logger.js**: Configuración de registro
 
-### Logging Component
-The Logging component handles application logging across all components. It uses Winston for structured logging and provides different log levels for various types of events.
-- **logger.js**: Implements logging functionality
+### Componente de Registro
+El componente de Registro maneja el registro de la aplicación en todos los componentes. Utiliza Winston para registro estructurado y proporciona diferentes niveles de registro para varios tipos de eventos.
+- **logger.js**: Implementa funcionalidad de registro
 
-## Relationships
+## Relaciones
 
-1. The Frontend Application makes API calls to the Routes component.
-2. The Routes component directs requests to the appropriate Controllers.
-3. Controllers use Services to implement business logic.
-4. Services use Repositories to access data.
-5. Repositories use Models to interact with the database.
-6. Models read from and write to the PostgreSQL Database.
-7. Services may use the API Client to interact with external APIs.
-8. The Configuration component configures Models and other components.
-9. The Logging component provides logging capabilities across the application.
+1. La Aplicación Frontend realiza llamadas API al componente de Rutas.
+2. El componente de Rutas dirige las peticiones a los Controladores apropiados.
+3. Los Controladores utilizan Servicios para implementar la lógica de negocio.
+4. Los Servicios utilizan Repositorios para acceder a los datos.
+5. Los Repositorios utilizan Modelos para interactuar con la base de datos.
+6. Los Modelos leen y escriben en la Base de Datos PostgreSQL.
+7. Los Servicios pueden utilizar el Cliente API para interactuar con APIs externas.
+8. El componente de Configuración configura los Modelos y otros componentes.
+9. El componente de Registro proporciona capacidades de registro en toda la aplicación.
 
-This architecture follows a layered approach that separates concerns and promotes maintainability and testability.
+Esta arquitectura sigue un enfoque por capas que separa las responsabilidades y promueve la mantenibilidad y la capacidad de prueba.
+
+[Volver](https://github.com/alejoDev117/Documentacion_Control_Inhibitorio/tree/main)
